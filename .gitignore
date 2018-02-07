@@ -1,0 +1,25 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+
+# testing
+coverage
+
+# production
+build
+cmo.tar.bz2
+
+# misc
+.DS_Store
+npm-debug.log
+git.log.csv
+
+#config
+config/*
+
+#env
+.env
+.env*
+/.project
+.idea/workspace.xml

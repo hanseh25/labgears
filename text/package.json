@@ -1,0 +1,10 @@
+{
+  "name": "@labgears/text",
+  "version": "1.0.0",
+  "description": "labgear component for text fields",
+  "main": "index.js",
+  "author": "Hans Torres <hans.torres@98labs.com>",
+  "peerDependencies": {
+    "react": "15.6.0 - 16.2.0"
+  }
+}
