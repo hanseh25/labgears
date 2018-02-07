@@ -1,11 +1,10 @@
 {
   "name": "@labgears/text",
-  "version": "1.0.0",
-  "description": "labgear component for text fields",
-  "main": "src/index.js",
-  "author": "Hans Torres <hans.torres@98labs.com>",
+  "version": "0.0.1",
+  "description": "Put a description here",
+  "main": "build/index.js",
   "peerDependencies": {
-    "react": "15.6.0 - 16.2.0"
+    "react": "^15.5.4"
   },
   "dependencies": {
     "react": "^15.5.4",
@@ -15,6 +14,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",
     "build": "webpack"
+  },
+  "author": {
+    "name": "Hans Torres",
+    "email": "hans.torres@98labs.com"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
