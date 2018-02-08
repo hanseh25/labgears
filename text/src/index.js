@@ -1,11 +1,3 @@
-import React from 'react';
+import FieldText from './FieldText';
 
-class Text extends React.Component {
-  render() {
-    return (
-      <div>a</div>
-    );
-  }
-}
-
-export default Text;
+export default FieldText;
