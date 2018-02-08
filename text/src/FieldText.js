@@ -1,90 +1,66 @@
 // @flow
+
 import React, { Component } from 'react';
-import keyCode from 'keycode';
-import styled from 'styled-components';
+import Input from './styled/Input';
+import type { FieldTextProps } from './types';
 
-const common = `
-  appearance: none;
-  color: inherit;
-  font-size: 12;
-  font-family: inherit;
-  letter-spacing: inherit;
-`;
-
-const ReadView = styled.div`
-  ${common} overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-`;
-
-const EditView = styled.input`
-  ${common}
-  background: transparent;
-  border: 1;
-  box-sizing: border-box;
-  cursor: inherit;
-  line-height: inherit;
-  margin: 1;
-  outline: none;
-  padding: 1;
-  width: 100%;
-  :invalid: {
-    boxshadow: none;
-  },
-`;
-
-type Props = {
-  value?: string | number,
-  style?: Object,
-  isInitiallySelected?: boolean,
-  isEditing: boolean,
-  onConfirm?: (e: KeyboardEvent) => mixed,
-  onKeyDown?: (e: KeyboardEvent) => mixed,
-};
-
-export default class SingleLineTextInput extends Component<Props, {}> {
+export default class FieldText extends Component<
+  FieldTextProps,
+  void,
+> {
   static defaultProps = {
-    style: {},
-    isInitiallySelected: false,
-    onConfirm: () => {},
-    onKeyDown: () => {},
+    compact: false,
+    disabled: false,
+    isInvalid: false,
+    isReadOnly: false,
+    isSpellCheckEnabled: true,
+    onChange: () => {},
+    required: false,
+    type: 'text',
   };
-  inputRef: ?HTMLInputElement;
 
-  componentDidMount() {
-  }
+  input: ?HTMLInputElement;
 
-  componentDidUpdate(prevProps: Props) {
-    if (!prevProps.isEditing) {
-      this.selectInputIfNecessary();
+  focus() {
+    if (this.input) {
+      this.input.focus();
     }
   }
 
-  onKeyDown = (event: KeyboardEvent) => {
-    if (this.props.onKeyDown) {
-      this.props.onKeyDown(event);
-    }
-    if (event.keyCode === keyCode('enter')) {
-      if (this.props.onConfirm) this.props.onConfirm(event);
-    }
+  handleInputRef = (input: HTMLInputElement) => {
+    this.input = input;
   };
-
-  getInputProps = () => {
-    const inputProps = {
-      ...this.props,
-      type: 'text',
-      onKeyDown: this.onKeyDown,
-    };
-
-    return inputProps;
-  };
-
-
-  renderReadView() {
-    return <ReadView style={this.props.style}>{this.props.value}</ReadView>;
-  }
 
   render() {
-    return <input {...this.getInputProps()} />
+    return (
+      <div>
+          <Input
+            autoComplete={this.props.autoComplete}
+            autoFocus={this.props.autoFocus}
+            disabled={this.props.disabled}
+            form={this.props.form}
+            id={this.props.id}
+            innerRef={this.handleInputRef}
+            maxLength={this.props.maxLength}
+            min={this.props.min}
+            max={this.props.max}
+            name={this.props.name}
+            onBlur={this.props.onBlur}
+            onChange={this.props.onChange}
+            onFocus={this.props.onFocus}
+            onKeyDown={this.props.onKeyDown}
+            onKeyPress={this.props.onKeyPress}
+            onKeyUp={this.props.onKeyUp}
+            pattern={this.props.pattern}
+            placeholder={this.props.placeholder}
+            readOnly={this.props.isReadOnly}
+            required={this.props.required}
+            spellCheck={this.props.isSpellCheckEnabled}
+            type={this.props.type}
+            value={this.props.value}
+          />
+
+      </div>
+    );
   }
 }
