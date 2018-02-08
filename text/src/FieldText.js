@@ -20,13 +20,13 @@ const ReadView = styled.div`
 const EditView = styled.input`
   ${common}
   background: transparent;
-  border: 0;
+  border: 1;
   box-sizing: border-box;
   cursor: inherit;
   line-height: inherit;
-  margin: 0;
+  margin: 1;
   outline: none;
-  padding: 0;
+  padding: 1;
   width: 100%;
   :invalid: {
     boxshadow: none;
@@ -52,7 +52,6 @@ export default class SingleLineTextInput extends Component<Props, {}> {
   inputRef: ?HTMLInputElement;
 
   componentDidMount() {
-    this.selectInputIfNecessary();
   }
 
   componentDidUpdate(prevProps: Props) {
@@ -76,42 +75,16 @@ export default class SingleLineTextInput extends Component<Props, {}> {
       type: 'text',
       onKeyDown: this.onKeyDown,
     };
-    delete inputProps.style;
-    delete inputProps.isEditing;
-    delete inputProps.isInitiallySelected;
-    delete inputProps.onConfirm;
+
     return inputProps;
   };
 
-  select() {
-    if (this.inputRef) {
-      this.inputRef.select();
-    }
-  }
-
-  selectInputIfNecessary() {
-    if (this.props.isEditing && this.props.isInitiallySelected) {
-      this.select();
-    }
-  }
-
-  renderEditView() {
-    return (
-      <EditView
-        style={this.props.style}
-        {...this.getInputProps()}
-        innerRef={ref => {
-          this.inputRef = ref;
-        }}
-      />
-    );
-  }
 
   renderReadView() {
     return <ReadView style={this.props.style}>{this.props.value}</ReadView>;
   }
 
   render() {
-    return <input type='text' />
+    return <input {...this.getInputProps()} />
   }
 }
