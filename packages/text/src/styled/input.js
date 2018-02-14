@@ -29,8 +29,8 @@ const getPlaceholderColor = css`
 `;
 
 const InputElement = styled.input`
-  background: blue;
-  border: 0;
+  background: yellow;
+  border: 4px solid;
   box-sizing: border-box;
   color: inherit;
   cursor: inherit;

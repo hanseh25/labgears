@@ -1,0 +1,17 @@
+{
+  "name": "@labgears/button",
+  "version": "1.0.0",
+  "description": "button component",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "styled-components": "^3.1.6"
+  },
+  "peerDependencies": {
+    "react": "^15.5.4"
+  },
+  "author": "",
+  "license": "ISC"
+}

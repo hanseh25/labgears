@@ -17,6 +17,7 @@ export default class FieldText extends Component<
     onChange: () => {},
     required: false,
     type: 'text',
+    error: 'test'
   };
 
   input: ?HTMLInputElement;
@@ -35,6 +36,7 @@ export default class FieldText extends Component<
     return (
       <div>
           <Input
+            className={this.props.className}
             autoComplete={this.props.autoComplete}
             autoFocus={this.props.autoFocus}
             disabled={this.props.disabled}
@@ -59,7 +61,7 @@ export default class FieldText extends Component<
             type={this.props.type}
             value={this.props.value}
           />
-
+        <p> { this.props.error }</p>
       </div>
     );
   }
