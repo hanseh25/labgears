@@ -61,4 +61,6 @@ export type FieldTextProps = {
   autoFocus?: boolean,
   /** Set the maximum length that the entered text can be. */
   maxLength?: number,
+  /** className for style override */
+  className: string,
 };

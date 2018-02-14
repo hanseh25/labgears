@@ -1,5 +1,4 @@
 // @flow
-
 import React, { Component } from 'react';
 import Input from './styled/Input';
 import type { FieldTextProps } from './types';
@@ -16,8 +15,7 @@ export default class FieldText extends Component<
     isSpellCheckEnabled: true,
     onChange: () => {},
     required: false,
-    type: 'text',
-    error: 'test'
+    type: 'text'
   };
 
   input: ?HTMLInputElement;
@@ -61,7 +59,6 @@ export default class FieldText extends Component<
             type={this.props.type}
             value={this.props.value}
           />
-        <p> { this.props.error }</p>
       </div>
     );
   }
