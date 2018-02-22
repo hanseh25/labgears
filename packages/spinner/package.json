@@ -1,7 +1,7 @@
 {
-  "name": "@labgears/theme",
+  "name": "@labgears/spinner",
   "version": "0.0.1",
-  "description": "theme for labgears",
+  "description": "spinner module",
   "main": "build/index.js",
   "license": "MIT",
   "scripts": {

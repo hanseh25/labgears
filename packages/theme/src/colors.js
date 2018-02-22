@@ -23,4 +23,4 @@ export const N01 = '#7A869A';
 export const DN01 = '#121A29';
 
 // Themed colors
-export const placeholderText = themed({ light: N01, dark: DN01 });
+export const placeholderText = themed({ light: N01, dark: DN01 }, "dark");
