@@ -2,7 +2,7 @@
 import * as colors from "./colors";
 
 export { colors };
-
+//let a: string = 'a';
 // export const borderRadius = (): number => 3;
 // export const gridSize = (): number => 8;
 // export const fontSize = (): number => 14;
