@@ -1,6 +1,6 @@
 // @flow
-import styled, { css } from "styled-components";
-import { colors } from "@labgears/theme";
+import styled, { css } from 'styled-components';
+import { colors } from '@labgears/theme';
 
 const getPlaceholderStyle = style => css`
   &::-webkit-input-placeholder {

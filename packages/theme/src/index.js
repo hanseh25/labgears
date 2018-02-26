@@ -1,7 +1,8 @@
 // @flow
-import * as colors from "./colors";
+import * as colors from './colors';
+import LabGearsThemeProvider from './LabGearsThemeProvider';
 
-export { colors };
+export { colors, LabGearsThemeProvider };
 
 export const borderRadius = (): number => 3;
 export const gridSize = (): number => 8;
